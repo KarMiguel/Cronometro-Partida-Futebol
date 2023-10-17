@@ -1,0 +1,280 @@
+:root {
+    --color-background: rgba(0, 0, 0, 0.5);
+    --color-button-bg: transparent;
+    --color-button-border: 3px solid white;
+    --color-text: white;
+    --color-text-input: rgba(252, 252, 252, 0.3);
+    --color-time-gradient: radial-gradient(ellipse at center, #f00505, #080000);
+    --color-border: 4px solid white;
+    --color-placar-gradient: linear-gradient(to bottom right, #080000, #f00505);
+    --color-toast-red: rgb(233, 70, 70);
+    --color-toast-green: rgb(37, 185, 37);
+}
+  
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI';
+  }
+  
+.img-fundo {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/img6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    filter: blur(2px);
+}
+  
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9990;
+    background: var(--color-background);
+    width: 70% !important;
+}
+  
+.cadastro {
+    text-align: center;
+    color: var(--color-text);
+}
+  
+.title-partida {
+    font-size: 36px;
+    color: var(--color-title);
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    letter-spacing: 10px;
+    background: var(--color-time-gradient);
+    border-radius: 30px;
+    border: var(--color-border);
+}
+  
+.form-group {
+    padding: 2px 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+ 
+.form-control {
+    padding: 10px;
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0px 10px 15px -3px var(--color-text-input) !important;
+}
+  
+.tempo-partida-cadastrar {
+    padding: 5px 35px !important;
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0px 10px 15px -3px var(--color-text-input) !important;
+}
+  
+.btn-iniciar {
+    background: var(--color-button-bg);
+    color: var(--color-button-text);
+    border-radius: 1rem;
+    padding: 3px;
+    font-size: 20px;
+    font-weight: 400 !important;
+    border-radius: 30px !important;
+    border:  var(--color-border)!important; 
+}
+  
+.btn-iniciar:hover {
+    background: var(--color-time-gradient);
+}
+  
+.hidden {
+    display: none;
+ }
+  
+.container-placar {
+    display: flex;
+    justify-content: space-evenly;
+}
+  
+.logo-time img {
+    width: 200px !important;
+    height: 140px !important;
+    filter: brightness(1.2);
+    margin-left: -32px;
+}
+  
+.nome-time {
+   background: var(--color-time-gradient);
+    border-radius: 20px;
+    border: var(--color-border);
+    width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20px;
+    text-overflow: ellipsis;
+}
+
+.placar {
+    height: 200px;
+    width: 150px;
+    background: var(--color-placar-gradient);
+    border-radius: 2rem;
+    align-items: center;
+    border: 8px solid white;
+}
+  
+.tempo-partida {
+    height: 80px;
+    width: 200px;
+    border-radius: 60rem;
+    background: var(--color-time-gradient);
+    border: 3px solid white;
+    margin-left: -20px;
+}
+  
+.tempo-partida h2 {
+    font-size: 45px;
+}
+  
+.numero-placar {
+    font-size: 150px;
+    border-radius: 20px;
+}
+  
+.btn-placar {
+    background-color: #6b0505;
+    border: 1px solid white !important;
+    color: white;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    font-weight: 400;
+    margin-left: 30px;
+    margin-right: -25px;
+}
+  
+.card-logo2 {
+    margin-left: -25px;
+}
+  
+.btn-play {
+    margin-top: 5px;
+    background-color: #6b0505;
+    border: 1px solid white !important;
+    color: white;
+}
+  
+#container-mensagens {
+    z-index: 2147483647;
+    position: fixed;
+    width: 1000px !important;
+    justify-content: center;
+}
+ 
+.toast {
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+  }
+  
+.toast.red {
+    background-color: var(--color-toast-red);
+}
+  
+.toast.green {
+    background-color: var(--color-toast-green);
+ }
+  
+.card-logo {
+    margin: 0;
+}
+  
+  @media screen and (max-width: 767px) {
+    .title-cadastro {
+      font-size: 30px;
+    }
+    .container-placar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      flex-direction: column;
+    }
+    .title-partida {
+      display: none;
+    }
+    .card-marcador-placar {
+      margin: 0;
+    }
+  
+    .title-cadastro {
+      font-size: 30px;
+    }
+  
+    .card-marcador-placar {
+      display: flex !important;
+      justify-content: center !important;
+      flex-direction: column !important;
+      margin-left: 1%;
+    }
+  
+    .card-placar {
+      margin-left: 55%;
+    }
+  
+    .logo-time img {
+      width: 100px !important;
+      height: 80px !important;
+      margin-left: 0;
+    }
+  
+    .nome-time {
+      width: auto;
+      font-size: 16px;
+    }
+  
+    .placar {
+      height: 120px;
+      width: 100px;
+      font-size: 30px;
+      margin-bottom: 6px;
+      margin-top: 20px;
+    }
+    .card-logo2 {
+      margin: 0;
+    }
+    .tempo-partida {
+      height: 60px;
+      width: 150px;
+      margin-bottom: 50px;
+      margin-left: 13%;
+    }
+  
+    .cronometro h2 {
+      font-size: 35px;
+    }
+  
+    .numero-placar {
+      font-size: 80px;
+    }
+  
+    .btn-placar {
+      width: 30px;
+      height: 35px;
+      font-size: 8px;
+      margin-left: 20px;
+      margin-right: -10px;
+    }
+  
+    .btn-play {
+      margin-top: 10px;
+      width: 30px;
+      height: 35px;
+    }
+}

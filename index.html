@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="shortcut icon" href="img/bola.png" type="image/x-icon">
+    
+    <title>Placar de Jogo</title>
+</head>
+<body>
+
+
+    <header class="cadastro">
+        <div class="img-fundo"></div>
+        <div class="mt-2 d-flex " id="container-mensagens"></div>
+            <div class="container ">
+                <section class="cadastro   " id="containerCadastro">
+                    <div class="title-cadastro mt-4">  
+                        <h1><strong>Bem Vindo ao Jogo dos Campeões!!</strong></h1>    
+                    </div>     
+                    <div class=" form-group mt-3 ">
+                        <div class="row">
+                            <div  class="col-12  col-lg-6 col-md-6 col-sm-12 col-one">
+                                <label for="time1">Nome Time 1:</label>
+                                <input type="text" id="time1" class="form-control" required placeholder="Time1 FC">
+
+                                <label for="logo1">Logo do Time 1:</label>
+                                <input type="file" name="logo1" id="logo1"class="form-control" accept=".jpg, .jpeg, .png">
+                            </div>
+                            <div  class="col-12  col-lg-6 col-md-6 col-sm-12 col-one">
+                                <label for="time1">Nome Time 2:</label>
+                                <input type="text" id="time2"  class="form-control" required placeholder="Time2 FC">
+
+                                <label for="logo2 ">Logo do Time 2:</label>
+                                <input type="file" name="logo2" id="logo2" accept=".jpg, .jpeg, .png" class="form-control ">
+                            </div>
+                            <div class="col-12 col-lg-12 col-md-12 col-sm-12 col-one mt-4 mb-3">
+                                <label for="">Tempo da Partida:</label>
+                                <input type="time"  class="tempo-partida-cadastrar ml-2" required  name="tempoPartida" id="tempoPartida" >
+                            </div>
+                        </div>
+                        <div>
+                            <button  class="btn btn-iniciar"  type="submit" id="btnIniciar" >Inicar Partida</button>
+                        </div>
+                    </div>
+                </section>  
+                
+                <section class="hidden" id="containerPlacar">
+                    <div class="title-partida mb-5 p-2">
+                        <h1 class="text-center">Placar da Partida</h1>
+                    </div>
+                    <div class="container-placar p-4" >
+                        <div ></div>
+                        <div class="row">
+                            <div class="col-12 col-md-2 col-lg-2 mt-4 ">
+                                <div class="column card-logo1">
+                                    <h3 class="nome-time p-2 text-center" id="nomeTime1">Time 1</h3>
+                                    <div class="logo-time text-center" id="logoTime1">
+                                        <img id="logotime1" src="img/sem-escudo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-8 col-lg-8 ">
+                                <div class="card-marcador-placar">
+                                    <div class="row">
+                                        <div class="col-6 col-md-4 col-lg-4 col-sm-6">
+                                            <div class="card-placar" id="cardPlacar1">
+                                                <div class="placar mb-3 text-center" id="placar1">
+                                                    <h2 id="numeroPlacar1" class="numero-placar">0</h2>
+                                                </div>
+                                                <div class="d-flex align-self-center">
+                                                    <button class="btn btn-placar" onclick="addPlacar(1)"> + </button>
+                                                    <button class="btn btn-placar" onclick="diminuirPlacar(1)">-</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-12 col-lg-4 col-sm-12 mt-5">
+                                            <div class="tempo-partida" >
+                                                <div class="cronometro">
+                                                    <h2 id="cronometro">00:00:00</h2>
+                                                </div>
+                                                <div class="d-flex justify-content-center mt-4">
+                                                    <button class="btn  btn-play" id="play">></button>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        <div class="col-6 col-md-4 col-lg-4 col-sm-6">
+                                            <div class="card-placar" id="cardPlacar2">
+                                                <div class="placar mb-3 text-center" id="placar2">
+                                                    <h2 id="numeroPlacar2" class="numero-placar">0</h2>
+                                                </div>
+                                                <divc class="text-center d-flex align-self-center" >
+                                                    <button class="btn btn-placar " onclick="addPlacar(2)"> + </button>
+                                                    <button class="btn btn-placar " onclick="diminuirPlacar(2)">-</button>
+                                                </divc>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-logo2 col-12 col-md-2 col-lg-2 mt-4">
+                                <div class="column ">
+                                    <h3 class="nome-time p-2 text-center" id="nomeTime2">Time 2</h3>
+                                    <div class="logo-time text-center" id="logoTime2">
+                                        <img id="logotime2" src="img/sem-escudo.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </section>               
+                </div>          
+            </div>
+        </div>
+    </header>
+
+
+
+    <script type="text/javascript" src="js/placar.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/modernizr-3.5.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+</body>
+</html>
